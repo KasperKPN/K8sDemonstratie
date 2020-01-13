@@ -22,11 +22,11 @@ De volgende commando's kunnen in volgorde worden uitgevoerd in linuxshell of pow
 eksctl create cluster -f C:\Users\dijk595\Desktop\eks\k8sdemocluster.yaml
 
 #schalen laten zien met nginx pods#
-kubectl apply -f 'https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/01 nginx_simple.yaml'
+kubectl apply -f 'https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/01.nginx_simple.yaml'
 
 kubectl get deployments nginx-simpel-depl
 
-kubectl apply -f 'https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/02 nginx_simpleV2.yaml'
+kubectl apply -f 'https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/02.nginx_simpleV2.yaml'
 
 kubectl describe deployments nginx-simpel-depl
 kubectl rollout undo deployments/nginx-simpel-depl
