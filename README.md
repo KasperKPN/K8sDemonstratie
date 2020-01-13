@@ -9,12 +9,7 @@ Deze omgeving is uitsluitend bestemd voor ICT Consultants van de organisatie KPN
 De omgeving kan momenteel (December 2019) uitgerold worden door gebruik te maken van eksctl. Zorg ervoor dat je verbinding kan maken vanuit je locale omgeving met AWS.
 Daarnaast is een lokale instalatie en configuratie van kubectl nodig. 
 
-Download of clone de gehele en nieuwste demo-omgeving van gitlab alvorens een demonstratie-omgeving te deployen.
 Creëer het k8s cluster bij Amazon met het volgende commando in de Linux CLI of Windows Powershell:
-eksctl create cluster -f %localpath%\demo-omgeving\k8sdemocluster.yaml
-
-De volgende commando's kunnen in volgorde worden uitgevoerd in linuxshell of powershell:
-#Zet het cluster op#
 
 #de commando's in dit document kunnen in de linuxshell of powershell uitgevoerd worden.
 
@@ -22,11 +17,11 @@ De volgende commando's kunnen in volgorde worden uitgevoerd in linuxshell of pow
 eksctl create cluster -f C:\Users\dijk595\Desktop\eks\k8sdemocluster.yaml
 
 #schalen laten zien met nginx pods#
-kubectl apply -f 'https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/01 nginx_simple.yaml'
+kubectl apply -f 'https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/01.nginx_simple.yaml'
 
 kubectl get deployments nginx-simpel-depl
 
-kubectl apply -f 'https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/02 nginx_simpleV2.yaml'
+kubectl apply -f 'https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/02.nginx_simpleV2.yaml'
 
 kubectl describe deployments nginx-simpel-depl
 kubectl rollout undo deployments/nginx-simpel-depl
