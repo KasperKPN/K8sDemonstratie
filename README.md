@@ -67,18 +67,13 @@ kubectl apply -k https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/mas
 
 kubectl get service wordpress
 
-
 kubectl apply -k https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/gastboek
 
 kubectl get service frontend
 
 kubectl get all
 
-
 kubectl apply -f  https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/microservices-demo/deploy/kubernetes/namespace_sock-shop.yaml
 kubectl apply -f  https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/microservices-demo/deploy/kubernetes/complete-demo.yaml --validate=false
-
-
-
 
 eksctl delete cluster --name=k8sdemocluster --region=eu-central-1
