@@ -47,8 +47,17 @@ kubectl exec
 
 kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/dashboard/aio/deploy/recommended.yaml
 
-kubectl apply -k https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/dashboard_toegang_adminrole
-kubectl apply -k https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/dashboard_toegang_Pod-reader
+
+#Admin rol rechten geven voor consultants#
+
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/dashboard_toegang_adminrole/01_dashboard_serviceaccount.yaml
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/dashboard_toegang_adminrole/02_dashboard_adminrol.yaml
+
+#Pod-lees-role aanmaken voor sales#
+
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/dashboard_toegang_Pod-reader/01_pod-read-role-dashboard.yaml
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/dashboard_toegang_Pod-reader/02_read-serviceaccount-dashboard.yaml
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/dashboard_toegang_Pod-reader/03_pod-read-rolebind-dashboard.yaml
 
 
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
@@ -62,7 +71,16 @@ kubectl apply -k https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/mas
 
 kubectl get service wordpress
 
-kubectl apply -k https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/gastboek
+
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/gastboek/01_redis-mas-serv.yaml
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/gastboek/02.redis-mas-dep.yaml
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/gastboek/03.redis-slave-serv.yaml
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/gastboek/04.redis-slave-dep.yaml
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/gastboek/05.redis-front-serv.yaml
+kubectl apply -f https://raw.githubusercontent.com/KasperKPN/K8sDemonstratie/master/resources/gastboek/06.redis-front-dep.yaml
+
+
+
 
 kubectl get service frontend
 
