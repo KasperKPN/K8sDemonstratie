@@ -37,7 +37,6 @@ kubectl autoscale deployment nginx-simpel-depl --min=2 --max=6
 
 
 #commando op pod laten zien#
-
 kubectl get pods
 
 kubectl exec 
