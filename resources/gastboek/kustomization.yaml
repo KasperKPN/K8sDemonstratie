@@ -1,8 +1,0 @@
-resources:
-
-- 01.redis-mas-serv.yaml
-- 02.redis-mas-dep.yaml
-- 03.redis-slave-serv.yaml
-- 04.redis-slave-dep.yaml
-- 05.redis-front-serv.yaml
-- 06.redis-front-dep.yaml
