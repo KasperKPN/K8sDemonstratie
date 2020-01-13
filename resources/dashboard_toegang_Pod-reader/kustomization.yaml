@@ -1,5 +1,5 @@
 #dashboard toegang pod reader -  2019 -  ICT Consulting -  by Kasper van Dijk
 resources:
- - 01.pod-read-role-dashboard.yaml
- - 02.read-serviceaccount-dashboard.yaml
- - 03.pod-read-rolebind-dashboard.yaml
+ - 01_pod-read-role-dashboard.yaml
+ - 02_read-serviceaccount-dashboard.yaml
+ - 03_pod-read-rolebind-dashboard.yaml

@@ -1,4 +1,4 @@
 #dashboard toegang pod reader -  2019 -  ICT Consulting -  by Kasper van Dijk
 resources:
- - 01.dashboard_serviceaccount.yaml
- - 02.dashboard_adminrol.yaml
+ - 01_dashboard_serviceaccount.yaml
+ - 02_dashboard_adminrol.yaml
